@@ -17,14 +17,6 @@ naipes = ["clubs","diamonds", "hearts" ,"spades"]
 card_dictionary= {"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10,"Ace":14,"Queen":12,"King":13,"Jack":11}
 deck = [ f"{fig}"for naipe in naipes for fig in figures ]# Create a list of 52 card ranks as strings (we ignore suits in this game)
 
-
-player1=random.choice(deck)
-deck.remove(player1) # Remove the card so it cannot be drawn again
-player2=random.choice(deck)
-deck.remove(player2) # Same for Player 2
-
-
-
 def shuffling():
   time.sleep(1)
   print("...")
@@ -49,6 +41,10 @@ class figures_value:
 play_game=input("Do you want to play the game?[yes or no]: ")
 while play_game == "yes":
  print("Shuffling the cards...")
+ player1=random.choice(deck)
+ deck.remove(player1) # Remove the card so it cannot be drawn again
+ player2=random.choice(deck)
+ deck.remove(player2) # Same for Player 2
  shuffling()
  give_cards()
  
